@@ -36,18 +36,17 @@ enum UserRole {
 
 model User {
   id            String    @id @default(cuid())
-  firstname     String
-  lastname      String
-  country       String
-  state         String
-  phonenumber   String
+  name          String
+  country       String?
+  state         String?
+  phonenumber   String?
   email         String?   @unique
   emailVerified DateTime? @map("email_verified")
   image         String?
   role          UserRole @default(USER)
   password      String?
   accounts      Account[]
- 
+  
   @@map("users")
 }
  

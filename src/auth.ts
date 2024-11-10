@@ -20,6 +20,22 @@ declare module "next-auth" {
 export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   session: { strategy: "jwt" },
+  pages: {
+    signIn: "/sign-in",
+    error: "/sign-in-error",
+  },
+  events: {
+    async linkAccount({ user }) {
+      await prisma.user.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          emailVerified: new Date(),
+        },
+      });
+    },
+  },
   callbacks: {
     async session({ token, session }) {
       if (token.sub && session.user) {
@@ -31,7 +47,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
       return session;
     },
-    async jwt({ token }) {
+    async jwt({ token, user: newUser, profile }) {
       if (!token.sub) return token;
 
       const existUser = await getUserById(token.sub);

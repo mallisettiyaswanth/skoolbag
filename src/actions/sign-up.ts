@@ -28,8 +28,7 @@ export const SignUp = async (values: z.infer<typeof signUpSchema>) => {
     data: {
       email,
       password: hashedPassword,
-      firstname,
-      lastname,
+      name: firstname + " " + lastname,
       country,
       state,
       phonenumber,

@@ -6,6 +6,8 @@ import { Button, Divider, Typography } from "antd";
 import { FcGoogle } from "react-icons/fc";
 import Logo from "@/components/Logo";
 import SigninForm from "@/components/forms/auth/SigninForm";
+import { signIn } from "next-auth/react";
+import { DEFUALT_LOGIN_REDIRECT } from "@/routes";
 
 const { Text } = Typography;
 
@@ -28,7 +30,14 @@ const Page = (_props: Props) => {
           </Text>
         </div>
         <div className="flex mt-5 w-full">
-          <Button className="w-full flex flex-row gap-2 hover:text-primary-button">
+          <Button
+            className="w-full flex flex-row gap-2 hover:text-primary-button"
+            onClick={() =>
+              signIn("google", {
+                callbackUrl: DEFUALT_LOGIN_REDIRECT,
+              })
+            }
+          >
             <FcGoogle className="h-4 w-4" />
             <span>Sign in with Google</span>
           </Button>
