@@ -29,5 +29,9 @@ export const signInSchema = z.object({
     .string()
     .min(1, { message: "Email is required" })
     .email("Invalid Email"),
-  password: z.string().min(8, "length should be minimum 8"),
+  password: z.string(),
+});
+
+export const otpFormSignUp = z.object({
+  otp: z.number().min(4, "Opt is 4 feilded!"),
 });

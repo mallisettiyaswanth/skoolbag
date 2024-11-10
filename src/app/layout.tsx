@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/theme/theme-provider";
 import ReactQueryClientProvider from "@/utils/client/ReactQueryClientProvider";
+import { MessageProvider } from "@/context/MessageContext";
 
 const monaSans = localFont({
   src: "/fonts/Mona-Sans.woff2",
@@ -25,9 +26,11 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider>
         <ReactQueryClientProvider>
-          <body className={` ${monaSans.className} antialiased`}>
-            {children}
-          </body>
+          <MessageProvider>
+            <body className={` ${monaSans.className} antialiased`}>
+              {children}
+            </body>
+          </MessageProvider>
         </ReactQueryClientProvider>
       </ThemeProvider>
     </html>

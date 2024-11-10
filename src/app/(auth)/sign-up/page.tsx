@@ -1,37 +1,28 @@
 "use client";
+import OtpVerificationForm from "@/components/forms/auth/OtpVerificationForm";
 import SignupBasicForm from "@/components/forms/auth/SignupBasicForm";
-import useZodForm from "@/hooks/useZodForm";
+
 import { Button, Result, Steps } from "antd";
-import React, { Dispatch, SetStateAction, useMemo, useState } from "react";
-import { FormProvider } from "react-hook-form";
-import { signUpSchema } from "@/schemas";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
 type Props = {};
 
 const switchForm = (
   formNumber: number,
-  setStep: Dispatch<SetStateAction<number>>,
-  methods: any,
-  onSubmit: (data: any) => void
+  setStep: Dispatch<SetStateAction<number>>
 ) => {
   switch (formNumber) {
     case 0:
       return (
-        <SignupBasicForm callback={() => methods.handleSubmit(onSubmit)()} />
+        <SignupBasicForm callback={() => setStep((prev: number) => prev + 1)} />
       );
     case 1:
-      return <div>Two</div>;
-    case 2:
-      return <div>Three</div>;
-    case 3:
       return (
-        <div>
-          <Button type="primary" onClick={methods.handleSubmit(onSubmit)}>
-            Submit
-          </Button>
-        </div>
+        <OtpVerificationForm
+          callback={() => setStep((prev: number) => prev + 1)}
+        />
       );
-    case 4:
+    case 2:
       return (
         <Result
           status="success"
@@ -43,25 +34,13 @@ const switchForm = (
 };
 
 const Page = (_props: Props) => {
-  const [currStep, setStep] = useState<number>(0);
-  const schema = useMemo(() => {
-    return signUpSchema;
-  }, []);
-
-  const methods = useZodForm(schema);
-
-  const onSubmit = (data: any) => {
-    // console.log("Form Submitted", data);
-    // setStep((prev) => prev + 1);
-  };
+  const [currStep, setStep] = useState<number>(1);
 
   return (
     <div className="w-full py-10 flex flex-col gap-5">
-      <Steps progressDot items={Array(5).fill({})} current={currStep} />
+      <Steps progressDot items={Array(3).fill({})} current={currStep} />
       <div className="h-full flex items-center justify-center">
-        <FormProvider {...methods}>
-          {switchForm(currStep, setStep, methods, onSubmit)}
-        </FormProvider>
+        {switchForm(currStep, setStep)}
       </div>
     </div>
   );

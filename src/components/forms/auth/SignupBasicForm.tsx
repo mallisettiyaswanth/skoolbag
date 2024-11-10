@@ -1,9 +1,10 @@
 "use client";
-// import { SignUp } from "@/actions/auth/sign-up/route";
+import { SignUp } from "@/actions/sign-up";
+import useZodForm from "@/hooks/useZodForm";
+import { signUpSchema } from "@/schemas";
 import { COUNTRIES, COUNTRY_CODES } from "@/utils/client/constants";
 import { Button, Form, Input, Select } from "antd";
-import React, { useState } from "react";
-import { useFormContext } from "react-hook-form";
+import React, { useMemo, useState } from "react";
 import { FormItem } from "react-hook-form-antd";
 
 type Props = {
@@ -11,10 +12,17 @@ type Props = {
 };
 
 function SignupBasicForm({ callback }: Props) {
-  const methods = useFormContext();
+  const schema = useMemo(() => {
+    return signUpSchema;
+  }, []);
+
+  const methods = useZodForm(schema);
+
   const onSubmit = async (data: any) => {
-    // SignUp(data);
+    await SignUp(data);
+    callback();
   };
+
   const [selectedCountry, setSelectedCountry] = useState<string>(
     methods.watch("country") || ""
   );

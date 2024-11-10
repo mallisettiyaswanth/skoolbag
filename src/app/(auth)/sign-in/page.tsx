@@ -23,12 +23,12 @@ const Page = (_props: Props) => {
         </div>
         <div className="text-center flex flex-col gap-2">
           <Text className="text-black text-2xl font-bold">Welcome back</Text>
-          <Text className="font-semibold text-secondary-text text-sm">
+          <Text className="text-secondary-text text-sm">
             We are happy to see you again.
           </Text>
         </div>
         <div className="flex mt-5 w-full">
-          <Button className="w-full font-semibold flex flex-row gap-2 hover:text-primary-button">
+          <Button className="w-full flex flex-row gap-2 hover:text-primary-button">
             <FcGoogle className="h-4 w-4" />
             <span>Sign in with Google</span>
           </Button>

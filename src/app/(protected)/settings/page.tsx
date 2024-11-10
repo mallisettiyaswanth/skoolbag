@@ -1,9 +1,24 @@
+import { auth, signOut } from "@/auth";
 import React from "react";
 
 type Props = {};
 
-const Page = (props: Props) => {
-  return <div>settings Page</div>;
+const Page = async (props: Props) => {
+  const session = await auth();
+
+  return (
+    <div>
+      {JSON.stringify(session)}
+      <form
+        action={async () => {
+          "use server";
+          await signOut();
+        }}
+      >
+        <button type="submit">sign out</button>
+      </form>
+    </div>
+  );
 };
 
 export default Page;

@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.1",
     "@auth/prisma-adapter": "^2.7.3",

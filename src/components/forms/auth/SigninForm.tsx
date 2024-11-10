@@ -4,7 +4,7 @@ import useZodForm from "@/hooks/useZodForm";
 import { signInSchema } from "@/schemas";
 import * as z from "zod";
 import useReactMutation from "@/hooks/useReactMutation";
-// import { signIntoApp } from "@/actions/auth/sign-in/route";
+import { signIntoApp } from "@/actions/sign-in";
 import { FormItem } from "react-hook-form-antd";
 
 type SignInFormData = z.infer<typeof signInSchema>;
@@ -14,17 +14,13 @@ function SigninForm({}: Props) {
   const schema: z.ZodSchema<SignInFormData> = useMemo(() => signInSchema, []);
   const methods = useZodForm(schema);
 
-  // const { mutate: signIn } = useReactMutation({
-  //   mutationFn: async () => {},
-  //   schema: signInSchema,
-  //   options: {
-  //     loadingMessage: "Signing in...",
-  //   },
-  // });
+  const { mutate: signIn } = useReactMutation({
+    mutationFn: signIntoApp,
+  });
 
   return (
     <Form
-      // onFinish={methods.handleSubmit((data: SignInFormData) => signIn(data))}
+      onFinish={methods.handleSubmit((data: SignInFormData) => signIn(data))}
       autoComplete="off"
       className="w-full h-full flex flex-col"
       layout="vertical"
