@@ -34,7 +34,7 @@ const switchForm = (
 };
 
 const Page = (_props: Props) => {
-  const [currStep, setStep] = useState<number>(1);
+  const [currStep, setStep] = useState<number>(0);
 
   return (
     <div className="w-full py-10 flex flex-col gap-5">

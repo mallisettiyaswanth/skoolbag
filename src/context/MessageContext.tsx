@@ -18,6 +18,10 @@ export const MessageProvider = ({
 }) => {
   const [messageApi, contextHolder] = message.useMessage();
 
+  message.config({
+    top: 100,
+  });
+
   return (
     <MessageContext.Provider value={{ messageApi, contextHolder }}>
       {contextHolder}

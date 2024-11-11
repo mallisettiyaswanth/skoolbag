@@ -7,33 +7,44 @@ type Props<TVariables> = {
     success?: string;
     error?: string;
   }>;
+  key?: string;
+  onSuccesFun?: () => void;
+  onErrorFun?: () => void;
 };
 
-const useReactMutation = <TVariables,>({ mutationFn }: Props<TVariables>) => {
+const useReactMutation = <TVariables,>({
+  mutationFn,
+  key,
+  onSuccesFun,
+  onErrorFun,
+}: Props<TVariables>) => {
   const { messageApi } = useMessage();
+
   return useMutation({
     mutationFn,
     onSuccess(data, variables, context) {
-      console.log(data);
-      messageApi.destroy();
       messageApi.open({
+        key,
         type: "success",
         content: data.success,
       });
+      if (onSuccesFun) onSuccesFun();
     },
     onMutate(variables) {
       messageApi.open({
+        key,
         type: "loading",
         content: "Action in progress..",
         duration: 0,
       });
     },
     onError(error, variables, context) {
-      messageApi.destroy();
       messageApi.open({
+        key,
         type: "error",
         content: error.message,
       });
+      if (onErrorFun) onErrorFun();
     },
   });
 };

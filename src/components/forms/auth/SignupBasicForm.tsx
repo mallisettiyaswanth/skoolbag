@@ -1,5 +1,6 @@
 "use client";
 import { SignUp } from "@/actions/sign-up";
+import useReactMutation from "@/hooks/useReactMutation";
 import useZodForm from "@/hooks/useZodForm";
 import { signUpSchema } from "@/schemas";
 import { COUNTRIES, COUNTRY_CODES } from "@/utils/client/constants";
@@ -18,11 +19,6 @@ function SignupBasicForm({ callback }: Props) {
 
   const methods = useZodForm(schema);
 
-  const onSubmit = async (data: any) => {
-    await SignUp(data);
-    callback();
-  };
-
   const [selectedCountry, setSelectedCountry] = useState<string>(
     methods.watch("country") || ""
   );
@@ -33,13 +29,19 @@ function SignupBasicForm({ callback }: Props) {
     methods.setValue("state", "");
   };
 
+  const { mutate: signUp } = useReactMutation({
+    mutationFn: SignUp,
+    key: "login-message",
+    onSuccesFun: () => callback(),
+  });
+
   return (
     <div className="w-3/6 h-full py-5 flex flex-col gap-10">
       <div className="w-full">
         <h1 className="font-bold text-2xl tracking-wider">Let's get Start</h1>
       </div>
       <Form
-        onFinish={methods.handleSubmit(onSubmit)}
+        onFinish={methods.handleSubmit((data) => signUp(data))}
         layout="vertical"
         autoComplete="off"
       >
