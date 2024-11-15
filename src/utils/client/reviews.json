@@ -1,0 +1,290 @@
+{
+  "reviews_set_1": [
+    {
+      "body": "Incredible platform! I've learned so much in a short time.",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+      "username": "@learner123",
+      "name": "John Doe",
+      "rating": 5
+    },
+    {
+      "body": "The courses are well-structured and engaging. Highly recommend!",
+      "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+      "username": "@jane_doe",
+      "name": "Jane Doe",
+      "rating": 4
+    },
+    {
+      "body": "Great instructors and an easy-to-use platform. Love it!",
+      "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+      "username": "@studious_mark",
+      "name": "Mark Smith",
+      "rating": 5
+    },
+    {
+      "body": "Finally found a site that meets my learning needs!",
+      "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+      "username": "@lily_flower",
+      "name": "Lily Evans",
+      "rating": 4
+    },
+    {
+      "body": "Fantastic resource with a supportive community!",
+      "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+      "username": "@mike123",
+      "name": "Michael Johnson",
+      "rating": 5
+    },
+    {
+      "body": "Affordable and very informative. The instructors are amazing!",
+      "avatar": "https://randomuser.me/api/portraits/women/6.jpg",
+      "username": "@laura_j",
+      "name": "Laura James",
+      "rating": 4
+    },
+    {
+      "body": "Easy to navigate and filled with valuable information.",
+      "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+      "username": "@chris88",
+      "name": "Chris Martin",
+      "rating": 5
+    },
+    {
+      "body": "The best online learning experience I've had so far.",
+      "avatar": "https://randomuser.me/api/portraits/women/8.jpg",
+      "username": "@ana_k",
+      "name": "Ana Kim",
+      "rating": 5
+    },
+    {
+      "body": "A go-to resource for anyone looking to upskill.",
+      "avatar": "https://randomuser.me/api/portraits/men/9.jpg",
+      "username": "@upskill_tom",
+      "name": "Tom Wilson",
+      "rating": 4
+    },
+    {
+      "body": "User-friendly and a wide selection of courses.",
+      "avatar": "https://randomuser.me/api/portraits/women/10.jpg",
+      "username": "@jessica92",
+      "name": "Jessica Adams",
+      "rating": 5
+    }
+  ],
+  "reviews_set_2": [
+    {
+      "body": "Amazing learning experience with quality content and instructors.",
+      "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+      "username": "@samuel_y",
+      "name": "Samuel Young",
+      "rating": 4
+    },
+    {
+      "body": "Learning is fun with such an intuitive platform!",
+      "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+      "username": "@grace_w",
+      "name": "Grace White",
+      "rating": 5
+    },
+    {
+      "body": "Would love to see more advanced courses added.",
+      "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
+      "username": "@david_g",
+      "name": "David Green",
+      "rating": 3
+    },
+    {
+      "body": "The content here is so helpful for my career growth.",
+      "avatar": "https://randomuser.me/api/portraits/women/14.jpg",
+      "username": "@karen_e",
+      "name": "Karen Evans",
+      "rating": 5
+    },
+    {
+      "body": "Highly effective and the learning pace is just right.",
+      "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+      "username": "@robert_x",
+      "name": "Robert Xiao",
+      "rating": 4
+    },
+    {
+      "body": "Would recommend it to anyone looking to enhance skills.",
+      "avatar": "https://randomuser.me/api/portraits/women/16.jpg",
+      "username": "@emily_k",
+      "name": "Emily Kim",
+      "rating": 5
+    },
+    {
+      "body": "This platform makes learning so accessible and fun.",
+      "avatar": "https://randomuser.me/api/portraits/men/17.jpg",
+      "username": "@jason_r",
+      "name": "Jason Roy",
+      "rating": 4
+    },
+    {
+      "body": "Great for beginners and professionals alike!",
+      "avatar": "https://randomuser.me/api/portraits/women/18.jpg",
+      "username": "@sophia_m",
+      "name": "Sophia Miller",
+      "rating": 5
+    },
+    {
+      "body": "Enjoyed the wide range of topics available.",
+      "avatar": "https://randomuser.me/api/portraits/men/19.jpg",
+      "username": "@chris_b",
+      "name": "Chris Brown",
+      "rating": 4
+    },
+    {
+      "body": "Superb platform with excellent course variety.",
+      "avatar": "https://randomuser.me/api/portraits/women/20.jpg",
+      "username": "@hannah_s",
+      "name": "Hannah Smith",
+      "rating": 5
+    }
+  ],
+  "reviews_set_3": [
+    {
+      "body": "Simply a brilliant educational platform for all ages.",
+      "avatar": "https://randomuser.me/api/portraits/men/21.jpg",
+      "username": "@matthew_s",
+      "name": "Matthew Scott",
+      "rating": 5
+    },
+    {
+      "body": "Good content, but some courses could be more in-depth.",
+      "avatar": "https://randomuser.me/api/portraits/women/22.jpg",
+      "username": "@sara_c",
+      "name": "Sara Cole",
+      "rating": 3
+    },
+    {
+      "body": "Impressed by the range of courses and accessibility.",
+      "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+      "username": "@ryan_t",
+      "name": "Ryan Taylor",
+      "rating": 4
+    },
+    {
+      "body": "I found the courses very engaging and informative.",
+      "avatar": "https://randomuser.me/api/portraits/women/24.jpg",
+      "username": "@megan_r",
+      "name": "Megan Reid",
+      "rating": 5
+    },
+    {
+      "body": "Good overall experience but could use more video content.",
+      "avatar": "https://randomuser.me/api/portraits/men/25.jpg",
+      "username": "@jordan_b",
+      "name": "Jordan Blake",
+      "rating": 4
+    },
+    {
+      "body": "Loved the variety of subjects covered.",
+      "avatar": "https://randomuser.me/api/portraits/women/26.jpg",
+      "username": "@tina_h",
+      "name": "Tina Harris",
+      "rating": 5
+    },
+    {
+      "body": "Affordable pricing for such valuable content!",
+      "avatar": "https://randomuser.me/api/portraits/men/27.jpg",
+      "username": "@jake_lee",
+      "name": "Jake Lee",
+      "rating": 5
+    },
+    {
+      "body": "A great site for career-focused courses.",
+      "avatar": "https://randomuser.me/api/portraits/women/28.jpg",
+      "username": "@nina_w",
+      "name": "Nina Wilson",
+      "rating": 4
+    },
+    {
+      "body": "Love that I can learn at my own pace!",
+      "avatar": "https://randomuser.me/api/portraits/men/29.jpg",
+      "username": "@tony_d",
+      "name": "Tony Davis",
+      "rating": 5
+    },
+    {
+      "body": "An ideal site for busy professionals.",
+      "avatar": "https://randomuser.me/api/portraits/women/30.jpg",
+      "username": "@laura_s",
+      "name": "Laura Stone",
+      "rating": 5
+    }
+  ],
+  "reviews_set_4": [
+    {
+      "body": "Truly a helpful resource for gaining new skills.",
+      "avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+      "username": "@ethan_k",
+      "name": "Ethan King",
+      "rating": 4
+    },
+    {
+      "body": "The instructors are knowledgeable and supportive!",
+      "avatar": "https://randomuser.me/api/portraits/women/32.jpg",
+      "username": "@olivia_r",
+      "name": "Olivia Roberts",
+      "rating": 5
+    },
+    {
+      "body": "Great interface, easy to use.",
+      "avatar": "https://randomuser.me/api/portraits/men/33.jpg",
+      "username": "@kevin_b",
+      "name": "Kevin Brown",
+      "rating": 4
+    },
+    {
+      "body": "Highly recommended for all learners!",
+      "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
+      "username": "@amy_m",
+      "name": "Amy Mitchell",
+      "rating": 5
+    },
+    {
+      "body": "They offer a wide range of courses that are very helpful.",
+      "avatar": "https://randomuser.me/api/portraits/men/35.jpg",
+      "username": "@charles_f",
+      "name": "Charles Ford",
+      "rating": 5
+    },
+    {
+      "body": "Well-structured and informative. Great value for money!",
+      "avatar": "https://randomuser.me/api/portraits/women/36.jpg",
+      "username": "@mary_ann",
+      "name": "Mary Ann",
+      "rating": 4
+    },
+    {
+      "body": "The best investment in my professional growth!",
+      "avatar": "https://randomuser.me/api/portraits/men/37.jpg",
+      "username": "@brandon_k",
+      "name": "Brandon Knight",
+      "rating": 5
+    },
+    {
+      "body": "Learning is so convenient and accessible here.",
+      "avatar": "https://randomuser.me/api/portraits/women/38.jpg",
+      "username": "@emma_j",
+      "name": "Emma Johnson",
+      "rating": 5
+    },
+    {
+      "body": "Provides excellent insights and practical knowledge.",
+      "avatar": "https://randomuser.me/api/portraits/men/39.jpg",
+      "username": "@ben_s",
+      "name": "Ben Stone",
+      "rating": 4
+    },
+    {
+      "body": "Easy to follow and filled with real-world examples.",
+      "avatar": "https://randomuser.me/api/portraits/women/40.jpg",
+      "username": "@alice_g",
+      "name": "Alice Gray",
+      "rating": 5
+    }
+  ]
+}

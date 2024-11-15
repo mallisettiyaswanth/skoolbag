@@ -1,11 +1,13 @@
-import useReactMutation from "@/hooks/useReactMutation";
 import useZodForm from "@/hooks/useZodForm";
 import { otpFormSignUp } from "@/schemas";
 import { Button, Card, Form, Input } from "antd";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { FormItem } from "react-hook-form-antd";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import useReactMutation from "@/hooks/useReactMutation";
+import { verifyToken } from "@/actions/verification-token";
+import { generateVerificationToken } from "@/lib/tokens";
 
 type Props = {
   callback: () => void;
@@ -14,14 +16,22 @@ type Props = {
 const OtpVerificationForm = ({ callback }: Props) => {
   const schema = useMemo(() => otpFormSignUp, []);
   const methods = useZodForm(schema);
+  const [email] = useState(() => localStorage.getItem("email"));
 
   const [isResendDisabled, setIsResendDisabled] = useState(false);
   const [resendTimer, setResendTimer] = useState(0);
 
+  const { mutate: sendTokenAgain } = useReactMutation({
+    mutationFn: generateVerificationToken,
+    key: "resend-verification-token",
+  });
+
   const handleResendOtp = () => {
+    if (email) {
+      sendTokenAgain(email);
+    }
     setIsResendDisabled(true);
     setResendTimer(20);
-
     const timer = setInterval(() => {
       setResendTimer((prev) => {
         if (prev <= 1) {
@@ -33,6 +43,11 @@ const OtpVerificationForm = ({ callback }: Props) => {
       });
     }, 1000);
   };
+
+  const { mutate: verifyOtp } = useReactMutation({
+    mutationFn: verifyToken,
+    key: "otp-verification",
+  });
 
   return (
     <div className="w-3/6 h-full py-5 flex flex-col gap-10 items-center">
@@ -53,7 +68,7 @@ const OtpVerificationForm = ({ callback }: Props) => {
         </Card>
       </div>
       <Form
-        onFinish={methods.handleSubmit}
+        onFinish={methods.handleSubmit((data) => verifyOtp(data))}
         className="flex flex-col w-full gap-5"
       >
         <div className="w-full flex flex-col gap-2">

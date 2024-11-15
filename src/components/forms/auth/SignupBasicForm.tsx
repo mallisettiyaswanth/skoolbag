@@ -2,11 +2,14 @@
 import { SignUp } from "@/actions/sign-up";
 import useReactMutation from "@/hooks/useReactMutation";
 import useZodForm from "@/hooks/useZodForm";
+import { DEFUALT_LOGIN_REDIRECT } from "@/routes";
 import { signUpSchema } from "@/schemas";
-import { COUNTRIES, COUNTRY_CODES } from "@/utils/client/constants";
+import { COUNTRIES, COUNTRY_CODES } from "@/utils/client/country_codes";
 import { Button, Form, Input, Select } from "antd";
+import { signIn } from "next-auth/react";
 import React, { useMemo, useState } from "react";
 import { FormItem } from "react-hook-form-antd";
+import { FcGoogle } from "react-icons/fc";
 
 type Props = {
   callback: () => void;
@@ -123,7 +126,18 @@ function SignupBasicForm({ callback }: Props) {
             <Input.Password placeholder="••••••••" />
           </FormItem>
         </div>
-        <div className="w-full flex justify-end">
+        <div className="w-full flex justify-between">
+          <Button
+            className="flex flex-row gap-2 hover:text-primary-button"
+            onClick={() =>
+              signIn("google", {
+                callbackUrl: DEFUALT_LOGIN_REDIRECT,
+              })
+            }
+          >
+            <FcGoogle className="h-4 w-4" />
+            <span>Sign in with Google</span>
+          </Button>
           <Button type="primary" htmlType="submit">
             Next
           </Button>

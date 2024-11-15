@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/theme/theme-provider";
+import ThemeProvider from "@/theme/theme-provider";
 import ReactQueryClientProvider from "@/utils/client/ReactQueryClientProvider";
 import { MessageProvider } from "@/context/MessageContext";
 
@@ -24,15 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider>
-        <ReactQueryClientProvider>
-          <MessageProvider>
-            <body className={` ${monaSans.className} antialiased`}>
-              {children}
-            </body>
-          </MessageProvider>
-        </ReactQueryClientProvider>
-      </ThemeProvider>
+      <body
+        className={` ${monaSans.className} antialiased no-scrollbar scrollbar-hide`}
+      >
+        <ThemeProvider>
+          <ReactQueryClientProvider>
+            <MessageProvider>{children}</MessageProvider>
+          </ReactQueryClientProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

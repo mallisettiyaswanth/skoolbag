@@ -16,6 +16,7 @@ function SigninForm({}: Props) {
 
   const { mutate: signIn } = useReactMutation({
     mutationFn: signIntoApp,
+    key: "login-notificatin-key",
   });
 
   return (

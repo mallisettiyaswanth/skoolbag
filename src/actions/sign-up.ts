@@ -5,9 +5,9 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { getUserByEmail } from "@/data/user";
+import { generateVerificationToken } from "@/lib/tokens";
 
 export const SignUp = async (values: z.infer<typeof signUpSchema>) => {
-  // Validate input fields with Zod
   const validateFields = signUpSchema.safeParse(values);
 
   if (!validateFields.success) {
@@ -39,6 +39,9 @@ export const SignUp = async (values: z.infer<typeof signUpSchema>) => {
     console.log("User created successfully");
 
     // TODO: Send verification token
+
+    await generateVerificationToken(email);
+
     return { success: "Verification email sent!" };
   } catch (error) {
     console.error("Sign-up error:", error);
