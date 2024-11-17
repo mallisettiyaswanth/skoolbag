@@ -22,7 +22,12 @@ const OtpVerificationForm = ({ callback }: Props) => {
   const [resendTimer, setResendTimer] = useState(0);
 
   const { mutate: sendTokenAgain } = useReactMutation({
-    mutationFn: generateVerificationToken,
+    mutationFn: async (email: string) => {
+      generateVerificationToken(email);
+      return {
+        success: "Token sent",
+      };
+    },
     key: "resend-verification-token",
   });
 
@@ -47,6 +52,9 @@ const OtpVerificationForm = ({ callback }: Props) => {
   const { mutate: verifyOtp } = useReactMutation({
     mutationFn: verifyToken,
     key: "otp-verification",
+    onSuccesFun: () => {
+      callback();
+    },
   });
 
   return (

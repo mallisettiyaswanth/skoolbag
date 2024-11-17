@@ -6,6 +6,7 @@ import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { getUserByEmail } from "@/data/user";
 import { generateVerificationToken } from "@/lib/tokens";
+import { sendVerificationEmail } from "@/lib/email";
 
 export const SignUp = async (values: z.infer<typeof signUpSchema>) => {
   const validateFields = signUpSchema.safeParse(values);
@@ -36,11 +37,8 @@ export const SignUp = async (values: z.infer<typeof signUpSchema>) => {
       },
     });
 
-    console.log("User created successfully");
-
-    // TODO: Send verification token
-
-    await generateVerificationToken(email);
+    const token = await generateVerificationToken(email);
+    await sendVerificationEmail(email, token.token, firstname + " " + lastname);
 
     return { success: "Verification email sent!" };
   } catch (error) {

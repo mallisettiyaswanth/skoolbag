@@ -33,5 +33,5 @@ export const signInSchema = z.object({
 });
 
 export const otpFormSignUp = z.object({
-  otp: z.number().min(4, "Opt is 4 feilded!"),
+  otp: z.string().min(4, "Opt is 4 feilded!"),
 });

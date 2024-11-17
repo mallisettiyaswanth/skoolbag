@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import Logo from "@/components/Logo";
+import Logo from "@/components/global/Logo";
 import {
   Anchor,
   Badge,

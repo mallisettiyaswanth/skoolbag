@@ -19,7 +19,6 @@ export const generateVerificationToken = async (email: string) => {
       email,
     },
   });
-  return {
-    success: "token sent",
-  };
+
+  return sentToken;
 };

@@ -1,4 +1,4 @@
-import Logo from "@/components/Logo";
+import Logo from "@/components/global/Logo";
 import { Avatar, Card, Carousel, Rate } from "antd";
 import React, { useMemo } from "react";
 type Props = {

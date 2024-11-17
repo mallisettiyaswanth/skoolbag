@@ -1,9 +1,12 @@
+"use server";
+
 import { prisma } from "@/lib/prisma";
 
-export const verifyToken = async (token: string) => {
+export const verifyToken = async ({ otp }: { otp: string }) => {
   try {
+    console.log(otp);
     const tokenRecord = await prisma.verificationToken.findUnique({
-      where: { token },
+      where: { token: otp },
     });
 
     if (!tokenRecord) {
@@ -11,12 +14,21 @@ export const verifyToken = async (token: string) => {
     }
 
     if (tokenRecord.expires < new Date()) {
-      await prisma.verificationToken.delete({ where: { token } });
+      await prisma.verificationToken.delete({ where: { token: otp } });
       throw new Error("Token expired, try resending the token");
     }
 
+    await prisma.user.update({
+      where: {
+        email: tokenRecord.email,
+      },
+      data: {
+        emailVerified: new Date(),
+      },
+    });
+
     await prisma.verificationToken.delete({
-      where: { token },
+      where: { token: otp },
     });
 
     return { success: "Ready to go😉" };

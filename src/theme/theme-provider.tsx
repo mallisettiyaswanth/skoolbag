@@ -41,6 +41,9 @@ const ThemeProvider = ({ children }: Props) => (
           defaultGhostBorderColor: "rgb(255,255,255)",
           defaultGhostColor: "rgb(255,255,255)",
         },
+        Dropdown: {
+          controlItemBgHover: "rgb(31 77 227 / 0.1)",
+        },
         Card: {
           fontFamily: "'Mona Sans', sans-serif",
         },

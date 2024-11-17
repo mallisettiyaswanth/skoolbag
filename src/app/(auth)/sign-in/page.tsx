@@ -4,7 +4,7 @@ import React from "react";
 import { LuLogIn } from "react-icons/lu";
 import { Button, Divider, Typography } from "antd";
 import { FcGoogle } from "react-icons/fc";
-import Logo from "@/components/Logo";
+import Logo from "@/components/global/Logo";
 import SigninForm from "@/components/forms/auth/SigninForm";
 import { signIn } from "next-auth/react";
 import { DEFUALT_LOGIN_REDIRECT } from "@/routes";
